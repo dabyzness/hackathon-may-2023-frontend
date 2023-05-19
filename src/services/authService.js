@@ -29,6 +29,8 @@ async function signup(userFormData, profileFormData) {
 
 async function login(formData) {
   try {
+    console.log(process.env.REACT_APP_BACKEND_URL);
+
     const res = await axios.request({
       method: "post",
       url: `${BASE_URL}/login`,
