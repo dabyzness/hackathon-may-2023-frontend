@@ -54,7 +54,7 @@ const MapFilterContainer = (props) => {
       <div
         style={{
           gridColumn: "span 6",
-          margin: "10px auto 0 auto",
+          margin: "8px auto 0 auto",
           height: "2px",
           width: "32px",
           backgroundColor: "#979797",

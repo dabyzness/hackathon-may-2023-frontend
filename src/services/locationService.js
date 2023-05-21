@@ -13,4 +13,15 @@ async function getLocations() {
   return json;
 }
 
-export { getLocations };
+async function getLocation(locationId) {
+  const res = await axios.request({
+    method: "get",
+    url: `${BASE_URL}/location/${locationId}`,
+  });
+
+  const json = await res.data;
+
+  return json;
+}
+
+export { getLocations, getLocation };

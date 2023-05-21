@@ -3,11 +3,12 @@ import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
 import Auth from "./pages/Auth/Auth";
+import Location from "./pages/Location/Location";
 
 import { signup, login } from "./services/authService";
 import { getProfile } from "./services/profileService";
 import { getUserFromToken } from "./services/token";
-import { getLocations } from "./services/locationService";
+import { getLocations, getLocation } from "./services/locationService";
 
 import "./App.css";
 
@@ -71,6 +72,12 @@ function App() {
     return { status: "OK" };
   }
 
+  async function fetchLocation(locationId) {
+    const data = await getLocation(locationId);
+
+    return data;
+  }
+
   return (
     <div className="App">
       <Routes>
@@ -80,6 +87,10 @@ function App() {
           element={
             <Auth handleSignup={handleSignup} handleLogin={handleLogin} />
           }
+        />
+        <Route
+          path="/location/:locationId"
+          element={<Location fetchLocation={fetchLocation} />}
         />
       </Routes>
     </div>

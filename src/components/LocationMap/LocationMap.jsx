@@ -2,6 +2,8 @@ import Map, { Marker, Popup } from "react-map-gl";
 import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
+import LocationOverlay from "../LocationOverlay/LocationOverlay";
+
 import "mapbox-gl/dist/mapbox-gl.css";
 import churchPin from "../../assets/mapPins/Church.svg";
 import doctorPin from "../../assets/mapPins/Doctor.svg";
@@ -106,7 +108,7 @@ const LocationMap = (props) => {
       ref={mapRef}
       initialViewState={viewState}
       {...viewState}
-      style={{ width: "100%", height: "92vh" }}
+      style={{ width: "100%", height: "87vh" }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       onMove={(e) => setViewState(e.viewState)}
     >
@@ -119,7 +121,8 @@ const LocationMap = (props) => {
           anchor="top"
           onClose={() => setPopupViewState(null)}
         >
-          <div
+          <LocationOverlay location={popupViewState} />
+          {/* <div
             style={{
               display: "flex",
               flexDirection: "column",
@@ -134,7 +137,7 @@ const LocationMap = (props) => {
             >
               Go to page
             </button>
-          </div>
+          </div> */}
         </Popup>
       )}
     </Map>
