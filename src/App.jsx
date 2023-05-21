@@ -7,12 +7,14 @@ import Auth from "./pages/Auth/Auth";
 import { signup, login } from "./services/authService";
 import { getProfile } from "./services/profileService";
 import { getUserFromToken } from "./services/token";
+import { getLocations } from "./services/locationService";
 
 import "./App.css";
 
 function App() {
   const [user, setUser] = useState(getUserFromToken());
   const [profile, setProfile] = useState(null);
+  const [locations, setLocations] = useState([]);
 
   useEffect(() => {
     if (!user) {
@@ -31,6 +33,19 @@ function App() {
     };
     fetchProfile();
   }, [user]);
+
+  useEffect(() => {
+    const fetchLocations = async () => {
+      const data = await getLocations();
+
+      if (data instanceof Error) {
+        return;
+      }
+
+      setLocations(data);
+    };
+    fetchLocations();
+  }, []);
 
   async function handleSignup(userFormData, profileFormData) {
     const data = await signup(userFormData, profileFormData);
@@ -59,7 +74,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home user={user} />} />
+        <Route path="/" element={<Home user={user} locations={locations} />} />
         <Route
           path="/auth"
           element={

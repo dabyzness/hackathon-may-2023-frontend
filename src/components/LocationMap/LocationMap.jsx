@@ -3,6 +3,14 @@ import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "mapbox-gl/dist/mapbox-gl.css";
+import churchPin from "../../assets/mapPins/Church.svg";
+import doctorPin from "../../assets/mapPins/Doctor.svg";
+import domesticPin from "../../assets/mapPins/DomesticViolence.svg";
+import financePin from "../../assets/mapPins/Finance.svg";
+import foodPin from "../../assets/mapPins/Food.svg";
+import housingPin from "../../assets/mapPins/Housing.svg";
+import resourcePin from "../../assets/mapPins/Resource.svg";
+import shelterPin from "../../assets/mapPins/Shelter.svg";
 
 const LocationMap = (props) => {
   const { locations, filters } = props;
@@ -36,8 +44,50 @@ const LocationMap = (props) => {
           alignItems: "center",
         }}
       >
-        {/* <p style={{ marginBottom: "-5px", color: "white" }}>{location.name}</p>
-        <img src="public/favico.ico" alt="" style={{ height: "30px" }} /> */}
+        {/* <p style={{ marginBottom: "-5px", color: "black" }}>{location.name}</p> */}
+        {location.category === "church" && (
+          <img
+            src={churchPin}
+            alt={location.category}
+            style={{ height: "30px" }}
+          />
+        )}
+        {location.category === "clinic" && (
+          <img
+            src={doctorPin}
+            alt={location.category}
+            style={{ height: "30px" }}
+          />
+        )}
+        {location.category === "shelter" && (
+          <img
+            src={shelterPin}
+            alt={location.category}
+            style={{ height: "30px" }}
+          />
+        )}
+        {location.category === "food" && (
+          <img
+            src={foodPin}
+            alt={location.category}
+            style={{ height: "30px" }}
+          />
+        )}
+        {(location.category === "resource" ||
+          location.category === "restaurant") && (
+          <img
+            src={resourcePin}
+            alt={location.category}
+            style={{ height: "30px" }}
+          />
+        )}
+        {location.category === "charity" && (
+          <img
+            src={financePin}
+            alt={location.category}
+            style={{ height: "30px" }}
+          />
+        )}
       </Marker>
     ))
   );
