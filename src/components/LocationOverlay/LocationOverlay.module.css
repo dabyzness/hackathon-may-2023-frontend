@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 4px 0 4px;
+  font-family: FigtreeLight;
+  /* justify-content: center; */
+}
+
+.locationName {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.locationStreet {
+  padding: 0;
+  margin: 4px 0 0 0;
+}
+
+.locationCity {
+  padding: 0;
+  margin: -8px 0 0 0;
+}
+
+.locationDistance {
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+}
+
+.locationButton {
+  padding: 0;
+  margin: 0;
+}
+
+.openClosed {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  color: #55ae35;
+}

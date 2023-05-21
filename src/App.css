@@ -1,3 +1,18 @@
+@font-face {
+  font-family: FigtreeLight;
+  src: url(./assets/fonts/Figtree-Light.ttf);
+}
+
+@font-face {
+  font-family: FigTreeRegular;
+  src: url(./assets/fonts/Figtree-Regular.ttf);
+}
+
+@font-face {
+  font-family: FigtreeSemiBold;
+  src: url(./assets/fonts/Figtree-SemiBold.ttf);
+}
+
 .App {
   text-align: center;
 }

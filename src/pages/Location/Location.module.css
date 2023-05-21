@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 16px;
+  margin-top: 16px;
+  font-family: FigtreeLight;
+  /* justify-content: center; */
+}
+
+.locationName {
+  font-size: 28px;
+  padding: 0;
+  margin: 0;
+}
+
+.locationStreet {
+  padding: 0;
+  margin: 4px 0 0 0;
+  font-size: 17.5px;
+}
+
+.locationCity {
+  padding: 0;
+  margin: 0 0 0 0;
+  font-size: 17.5px;
+}
+
+.locationDistance {
+  padding: 0;
+  /* margin: 0; */
+  font-size: 11px;
+  font-weight: bold;
+  opacity: 0.65;
+  letter-spacing: 1px;
+}
+
+.iconContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.about {
+  margin-top: 6px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: FigtreeRegular;
+}
+
+.heading3 {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #666666;
+  font-family: FigtreeSemiBold;
+}
+
+.tags {
+  list-style: none;
+  margin: 6px 0 18px 0;
+  padding: 0;
+}
+
+.tag {
+  text-align: left;
+  font-size: 18px;
+  line-height: 20px;
+  font-family: FigtreeRegular;
+}
+
+.backStar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.back {
+  border: none;
+  background: none;
+  padding: 0;
+  margin-left: 8px;
+}
+
+.star {
+  border: none;
+  background: none;
+  padding: 0;
+  transform: translateY(50%);
+}
