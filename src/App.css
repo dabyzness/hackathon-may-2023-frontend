@@ -1,3 +1,8 @@
+@font-face {
+  font-family: FigtreeLight;
+  src: url(./assets/fonts/Figtree-Light.ttf);
+}
+
 .App {
   text-align: center;
 }

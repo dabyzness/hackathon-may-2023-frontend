@@ -21,83 +21,92 @@ const LocationMap = (props) => {
     latitude: 37.781706,
     zoom: 15,
   });
+  const [markers, setMarkers] = useState([]);
 
   const navigate = useNavigate();
 
   const mapRef = useRef();
 
-  const markers = useMemo(() =>
-    locations.map((location, i) => (
-      <Marker
-        key={`marker-${i}`}
-        latitude={location.latitude}
-        longitude={location.longitude}
-        anchor="bottom"
-        onClick={(e) => {
-          e.originalEvent.stopPropagation();
-          setPopupViewState(location);
-        }}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {/* <p style={{ marginBottom: "-5px", color: "black" }}>{location.name}</p> */}
-        {location.category === "church" && (
-          <img
-            src={churchPin}
-            alt={location.category}
-            style={{ height: "30px" }}
-          />
-        )}
-        {location.category === "clinic" && (
-          <img
-            src={doctorPin}
-            alt={location.category}
-            style={{ height: "30px" }}
-          />
-        )}
-        {location.category === "shelter" && (
-          <img
-            src={shelterPin}
-            alt={location.category}
-            style={{ height: "30px" }}
-          />
-        )}
-        {location.category === "food" && (
-          <img
-            src={foodPin}
-            alt={location.category}
-            style={{ height: "30px" }}
-          />
-        )}
-        {(location.category === "resource" ||
-          location.category === "restaurant") && (
-          <img
-            src={resourcePin}
-            alt={location.category}
-            style={{ height: "30px" }}
-          />
-        )}
-        {location.category === "charity" && (
-          <img
-            src={financePin}
-            alt={location.category}
-            style={{ height: "30px" }}
-          />
-        )}
-      </Marker>
-    ))
-  );
+  useEffect(() => {
+    setMarkers(
+      locations.map((location, i) => (
+        <Marker
+          key={`marker-${i}`}
+          latitude={location.latitude}
+          longitude={location.longitude}
+          anchor="bottom"
+          onClick={(e) => {
+            e.originalEvent.stopPropagation();
+            setPopupViewState(location);
+          }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {/* <p style={{ marginBottom: "-5px", color: "black" }}>{location.name}</p> */}
+          {location.category === "church" && (
+            <img
+              src={churchPin}
+              alt={location.category}
+              style={{ height: "30px" }}
+            />
+          )}
+          {location.category === "doctor" && (
+            <img
+              src={doctorPin}
+              alt={location.category}
+              style={{ height: "30px" }}
+            />
+          )}
+          {location.category === "shelter" && (
+            <img
+              src={shelterPin}
+              alt={location.category}
+              style={{ height: "30px" }}
+            />
+          )}
+          {location.category === "food" && (
+            <img
+              src={foodPin}
+              alt={location.category}
+              style={{ height: "30px" }}
+            />
+          )}
+          {location.category === "resource" && (
+            <img
+              src={resourcePin}
+              alt={location.category}
+              style={{ height: "30px" }}
+            />
+          )}
+          {location.category === "finance" && (
+            <img
+              src={financePin}
+              alt={location.category}
+              style={{ height: "30px" }}
+            />
+          )}
+          {location.category === "domestic violence" && (
+            <img
+              src={domesticPin}
+              alt={location.category}
+              style={{ height: "30px" }}
+            />
+          )}
+        </Marker>
+      ))
+    );
+  }, [locations]);
 
   return (
     <Map
       ref={mapRef}
       initialViewState={viewState}
       {...viewState}
-      style={{ width: "100%", height: "100%", borderRadius: "10px" }}
+      style={{ width: "100%", height: "92vh" }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       onMove={(e) => setViewState(e.viewState)}
     >
@@ -121,7 +130,7 @@ const LocationMap = (props) => {
             <p style={{ fontSize: "1.1rem" }}>{popupViewState.name}</p>
             <button
               style={{ transform: "scale(75%)" }}
-              onClick={() => navigate(`/restaurant/${popupViewState._id}`)}
+              onClick={() => navigate(`/location/${popupViewState._id}`)}
             >
               Go to page
             </button>

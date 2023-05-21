@@ -8,15 +8,14 @@ const Home = (props) => {
   const { user, locations } = props;
   const [updatedLocations, setUpdatedLocations] = useState(locations);
   const [filters, setFilters] = useState([
-    "shelter",
-    "clinic",
-    "food",
-    "restaurant",
-    "other",
     "church",
-    "government",
+    "doctor",
+    "food",
+    "domestic violence",
+    "finance",
+    "housing",
     "resource",
-    "charity",
+    "shelter",
   ]);
 
   useEffect(() => {
@@ -26,45 +25,21 @@ const Home = (props) => {
   }, [filters, locations]);
 
   function handleChangeFilter(filterToChange) {
-    let updatedFilters = filters;
-
     if (filters.includes(filterToChange)) {
-      updatedFilters = filters.filter((filter) => filter !== filterToChange);
+      const updatedFilters = filters.filter(
+        (filter) => filter !== filterToChange
+      );
+      setFilters(updatedFilters);
     } else {
-      updatedFilters.push(filterToChange);
+      setFilters([...filters, filterToChange]);
     }
-    setFilters(updatedFilters);
   }
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    console.log(filters);
+  }, [filters]);
 
-  // const locations = [
-  //   {
-  //     name: "Birdsong",
-  //     longitude: -122.4091859,
-  //     latitude: 37.7814424,
-  //   },
-  //   {
-  //     name: "Passport",
-  //     longitude: -122.4171702,
-  //     latitude: 37.7811788,
-  //   },
-  //   {
-  //     name: "Union Square",
-  //     longitude: -122.4097904,
-  //     latitude: 37.7855449,
-  //   },
-  //   {
-  //     name: "Whole Foods",
-  //     longitude: -122.4066843,
-  //     latitude: 37.7838149,
-  //   },
-  //   {
-  //     name: "Dragon Gate",
-  //     longitude: -122.4056002,
-  //     latitude: 37.7866487,
-  //   },
-  // ];
+  const navigate = useNavigate();
 
   function handleOnClick() {
     navigate("/auth");
@@ -81,10 +56,12 @@ const Home = (props) => {
       {user ? (
         <div
           style={{
-            marginTop: "24px",
+            margin: "24px 0 0 0",
+            padding: "0 0 0 0",
+
             height: "90vh",
-            width: "95vw",
-            border: "2px solid #666666",
+            width: "100vw",
+            // border: "2px solid #666666",
             borderRadius: "5px",
           }}
         >

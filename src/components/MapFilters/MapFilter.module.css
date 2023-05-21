@@ -1,0 +1,19 @@
+.mapFilter {
+  grid-column: span 2;
+}
+
+.mapFilter:nth-child(6) {
+  grid-column: span 3;
+  margin-left: 50px;
+}
+.mapFilter:nth-child(7) {
+  grid-column: span 3;
+  margin-right: 50px;
+}
+
+.filterButton {
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
