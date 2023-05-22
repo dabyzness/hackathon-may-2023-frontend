@@ -56,10 +56,10 @@ const Home = (props) => {
       {user ? (
         <div
           style={{
-            margin: "24px 0 0 0",
+            margin: "50px 0 0 0",
             padding: "0 0 0 0",
 
-            height: "90vh",
+            height: "85vh",
             width: "100vw",
             // border: "2px solid #666666",
             borderRadius: "5px",

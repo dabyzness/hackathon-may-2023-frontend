@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0 16px;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   font-family: FigtreeLight;
   /* justify-content: center; */
 }
@@ -74,6 +74,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 56px;
 }
 
 .back {

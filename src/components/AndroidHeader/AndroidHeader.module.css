@@ -1,0 +1,21 @@
+.container {
+  width: 100vw;
+  /* padding-top: 22px; */
+  max-height: 50px;
+  min-height: 50px;
+  display: flex;
+  /* justify-content: space-between; */
+  border-bottom: 1px solid #b3b3b3;
+  position: fixed;
+  z-index: 99;
+  background-color: white;
+  align-items: end;
+}
+
+.time {
+  margin: 0 auto 10px 24px;
+}
+
+.battery {
+  margin: 0 24px 10px auto;
+}
