@@ -39,6 +39,7 @@ const Profile = (props) => {
   }
 
   const profileFake = {
+    bio: "Hey I'm Greg",
     phone: "6849752165",
     image: "/images/greg.PNG",
     address: "Raphael House",
@@ -89,7 +90,7 @@ const Profile = (props) => {
           {profile.firstName} {profile.lastName}
         </h2>
         <p className={styles.username}>@{profile.username}</p>
-        {profile.bio && <p className={styles.bio}>{profile.bio}</p>}
+        {profileFake.bio && <p className={styles.bio}>{profileFake.bio}</p>}
         <button className={styles.editButton}>Edit Profile</button>
       </div>
 
