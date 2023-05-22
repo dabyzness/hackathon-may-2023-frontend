@@ -13,6 +13,11 @@
   src: url(./assets/fonts/Figtree-SemiBold.ttf);
 }
 
+@font-face {
+  font-family: FigtreeMedium;
+  src: url(./assets/fonts/Figtree-Medium.ttf);
+}
+
 .App {
   text-align: center;
 }

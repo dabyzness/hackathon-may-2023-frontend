@@ -98,7 +98,7 @@ function App() {
         <Route
           path="/profile/:username"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute user={user}>
               <Profile user={user} profile={profile} />
             </ProtectedRoute>
           }
