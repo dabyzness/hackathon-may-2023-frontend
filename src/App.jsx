@@ -107,7 +107,7 @@ function App() {
           }
         />
       </Routes>
-      <Footer />
+      <Footer profile={profile} />
     </div>
   );
 }
