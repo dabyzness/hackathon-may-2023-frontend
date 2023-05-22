@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-family: FigtreeRegular;
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  margin: 12px 0 0 0;
+  font-size: 22px;
+}
+
+.username {
+  margin: 0;
+  font-weight: bold;
+  opacity: 0.65;
+}
+
+.bio {
+  margin-top: 6px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.editButton {
+  width: 119px;
+  height: 39px;
+  margin-bottom: 21px;
+  border-radius: 50px;
+  background-color: #5e5e5e;
+  border: none;
+  padding: 0;
+  color: white;
+}
+
+.infoContainer {
+  border-top: 1px solid #b3b3b3;
+  border-bottom: 1px solid #b3b3b3;
+  width: calc(100vw - 32px * 2);
+  padding: 21px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heading3 {
+  margin: 0;
+  /* padding: 0; */
+  font-size: 13px;
+  color: #666666;
+  font-family: FigtreeSemiBold;
+  letter-spacing: 1px;
+}
+
+.about {
+  margin-top: 6px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: FigtreeRegular;
+}
+
+.accordionIcon {
+  padding-left: 16px;
+  width: 26px;
+}
+
+.accordionHeading {
+  font-size: 13px;
+  padding-left: 16px;
+  letter-spacing: 1px;
+  color: black;
+  opacity: 0.65;
+}
