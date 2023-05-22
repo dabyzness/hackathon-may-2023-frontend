@@ -33,7 +33,10 @@ const Footer = (props) => {
         <p className={styles.word}>Profile</p>
       </div>
       <div className={styles.navContainer}>
-        <button className={styles.iconButton} onClick={() => navigate("/")}>
+        <button
+          className={styles.iconButton}
+          onClick={() => navigate("/location")}
+        >
           <img className={styles.icon} src={location} alt="map" />
         </button>
         <p className={styles.word}>Map</p>
