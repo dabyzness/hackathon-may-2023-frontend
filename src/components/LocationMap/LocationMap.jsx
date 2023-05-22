@@ -108,7 +108,7 @@ const LocationMap = (props) => {
       ref={mapRef}
       initialViewState={viewState}
       {...viewState}
-      style={{ width: "100%", height: "87vh" }}
+      style={{ width: "100%", height: "90%" }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       onMove={(e) => setViewState(e.viewState)}
     >
@@ -122,22 +122,6 @@ const LocationMap = (props) => {
           onClose={() => setPopupViewState(null)}
         >
           <LocationOverlay location={popupViewState} />
-          {/* <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <p style={{ fontSize: "1.1rem" }}>{popupViewState.name}</p>
-            <button
-              style={{ transform: "scale(75%)" }}
-              onClick={() => navigate(`/location/${popupViewState._id}`)}
-            >
-              Go to page
-            </button>
-          </div> */}
         </Popup>
       )}
     </Map>

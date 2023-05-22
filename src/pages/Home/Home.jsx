@@ -56,12 +56,11 @@ const Home = (props) => {
       {user ? (
         <div
           style={{
-            margin: "24px 0 0 0",
+            margin: "51px 0 0 0",
             padding: "0 0 0 0",
-
-            height: "90vh",
+            height: "calc(100vh - 51px - 61px)",
             width: "100vw",
-            // border: "2px solid #666666",
+            overflowY: "scroll",
             borderRadius: "5px",
           }}
         >
