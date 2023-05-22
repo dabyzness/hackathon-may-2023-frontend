@@ -1,0 +1,35 @@
+.container {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 12px;
+  background-color: white;
+  z-index: 99999;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #b3b3b3;
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconButton {
+  border: none;
+  background: none;
+}
+
+.word {
+  color: black;
+  margin: 0;
+  font-family: FigtreeLight;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.icon {
+  transform: scale(125%);
+}

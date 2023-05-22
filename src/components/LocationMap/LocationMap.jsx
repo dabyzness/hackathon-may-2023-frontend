@@ -108,7 +108,7 @@ const LocationMap = (props) => {
       ref={mapRef}
       initialViewState={viewState}
       {...viewState}
-      style={{ width: "100%", height: "83vh" }}
+      style={{ width: "100%", height: "90%" }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
       onMove={(e) => setViewState(e.viewState)}
     >

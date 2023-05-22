@@ -14,6 +14,7 @@ import { getLocations, getLocation } from "./services/locationService";
 
 import "./App.css";
 import AndroidHeader from "./components/AndroidHeader/AndroidHeader";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [user, setUser] = useState(getUserFromToken());
@@ -106,6 +107,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 }
