@@ -3,41 +3,42 @@ import { useNavigate } from "react-router-dom";
 
 import LocationMap from "../../components/LocationMap/LocationMap";
 import MapFilterContainer from "../../components/MapFilters/MapFilterContainer";
+import Landing from "../Landing/Landing";
 
 const Home = (props) => {
   const { user, locations } = props;
-  const [updatedLocations, setUpdatedLocations] = useState(locations);
-  const [filters, setFilters] = useState([
-    "church",
-    "doctor",
-    "food",
-    "domestic violence",
-    "finance",
-    "housing",
-    "resource",
-    "shelter",
-  ]);
+  // const [updatedLocations, setUpdatedLocations] = useState(locations);
+  // const [filters, setFilters] = useState([
+  //   "church",
+  //   "doctor",
+  //   "food",
+  //   "domestic violence",
+  //   "finance",
+  //   "housing",
+  //   "resource",
+  //   "shelter",
+  // ]);
 
-  useEffect(() => {
-    setUpdatedLocations(
-      locations.filter((location) => filters.includes(location.category))
-    );
-  }, [filters, locations]);
+  // useEffect(() => {
+  //   setUpdatedLocations(
+  //     locations.filter((location) => filters.includes(location.category))
+  //   );
+  // }, [filters, locations]);
 
-  function handleChangeFilter(filterToChange) {
-    if (filters.includes(filterToChange)) {
-      const updatedFilters = filters.filter(
-        (filter) => filter !== filterToChange
-      );
-      setFilters(updatedFilters);
-    } else {
-      setFilters([...filters, filterToChange]);
-    }
-  }
+  // function handleChangeFilter(filterToChange) {
+  //   if (filters.includes(filterToChange)) {
+  //     const updatedFilters = filters.filter(
+  //       (filter) => filter !== filterToChange
+  //     );
+  //     setFilters(updatedFilters);
+  //   } else {
+  //     setFilters([...filters, filterToChange]);
+  //   }
+  // }
 
-  useEffect(() => {
-    console.log(filters);
-  }, [filters]);
+  // useEffect(() => {
+  //   console.log(filters);
+  // }, [filters]);
 
   const navigate = useNavigate();
 
@@ -53,7 +54,7 @@ const Home = (props) => {
         alignItems: "center",
       }}
     >
-      {user ? (
+      {/* {user ? (
         <div
           style={{
             margin: "51px 0 0 0",
@@ -70,9 +71,13 @@ const Home = (props) => {
             handleChangeFilter={handleChangeFilter}
           />
         </div>
-      ) : (
-        <button onClick={handleOnClick}>Click to Authenticate</button>
-      )}
+      ) : ( */}
+      <Landing handleSignupClick={handleOnClick} />
+
+      {/* <button style={{ marginTop: "60px" }} onClick={handleOnClick}>
+        // Click to Authenticate //{" "}
+      </button> */}
+      {/* )} */}
     </div>
   );
 };

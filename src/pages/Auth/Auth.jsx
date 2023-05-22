@@ -5,7 +5,7 @@ import SignupForm from "../../components/Auth/SignupForm";
 const Auth = (props) => {
   const { handleSignup, handleLogin } = props;
 
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <div
@@ -21,9 +21,9 @@ const Auth = (props) => {
         <button onClick={(e) => setIsLogin(false)}>Click for Signup</button>
       </div>
       {isLogin ? (
-        <LoginForm handleLogin={handleLogin} />
+        <LoginForm handleLogin={handleLogin} setIsLogin={setIsLogin} />
       ) : (
-        <SignupForm handleSignup={handleSignup} />
+        <SignupForm handleSignup={handleSignup} setIsLogin={setIsLogin} />
       )}
     </div>
   );
