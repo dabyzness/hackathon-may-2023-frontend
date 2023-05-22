@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './AuthForms.module.css';
 
 const LoginForm = ({ handleLogin }) => {
   const [formData, setFormData] = useState({ email: "", password: "" });
