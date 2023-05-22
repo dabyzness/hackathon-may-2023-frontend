@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './AuthForms.module.css';
+import styles from './AuthForms.module.css';
 
 const LoginForm = ({ handleLogin }) => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -24,25 +24,39 @@ const LoginForm = ({ handleLogin }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">Email: </label>
-      <input
-        type="text"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-      />
+// LINK STILL NEEDS TO BE ADDED TO 'SIGN UP', AND FOR LOG IN BUTTON
+    <div>
+      <h3 className={styles.header}>Log In</h3>
+      <div className={styles.subHeaderContainer}>
+      <p className={styles.subHeaderText}>DON'T HAVE AN ACCOUNT?</p><p className={styles.subHeaderText+' '+styles.asLink}>SIGN UP</p>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.fieldsContainer}>
+          <div className={styles.inputFieldContainer}>
+            <input
+              type="text"
+              placeholder="EMAIL ADDRESS"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className={styles.inputFieldContainer}>
+            <input
+              type="text"
+              placeholder="PASSWORD"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+          <p className={styles.subFieldText}>KEEP ME SIGNED IN</p>
+          <p className={styles.forgotPassword}>FORGOT YOUR PASSWORD?</p>
 
-      <label htmlFor="password">Password: </label>
-      <input
-        type="text"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-      />
-
-      <button type="submit">LOGIN</button>
-    </form>
+        <button className={styles.submitButton+' '+styles.loginButton} type="submit">Log in</button>
+      </form>
+    </div>
   );
 };
 
