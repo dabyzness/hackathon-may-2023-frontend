@@ -4,6 +4,8 @@ import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Auth from "./pages/Auth/Auth";
 import Location from "./pages/Location/Location";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import Profile from "./pages/Profile/Profile";
 
 import { signup, login } from "./services/authService";
 import { getProfile } from "./services/profileService";
@@ -91,6 +93,15 @@ function App() {
         <Route
           path="/location/:locationId"
           element={<Location fetchLocation={fetchLocation} />}
+        />
+
+        <Route
+          path="/profile/:username"
+          element={
+            <ProtectedRoute>
+              <Profile user={user} profile={profile} />
+            </ProtectedRoute>
+          }
         />
       </Routes>
     </div>
