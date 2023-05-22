@@ -1,0 +1,140 @@
+.container {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  overflow-y: scroll;
+
+  background: linear-gradient(
+    180.23deg,
+    #cce7ff -8.05%,
+    rgba(255, 255, 255, 0.79) 99.8%
+  );
+}
+
+.about {
+  position: absolute;
+  width: 51px;
+  height: 16px;
+  left: 96px;
+  top: 68.99px;
+  margin-top: 0;
+
+  font-family: FigtreeLight;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  /* icon bground */
+
+  color: #737373;
+}
+
+.hamburger {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 24px;
+  top: 63px;
+}
+
+.signup {
+  position: absolute;
+  width: 70px;
+  height: 16px;
+  left: 197px;
+  top: 68.99px;
+  text-decoration: none;
+
+  font-family: FigtreeLight;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  /* icon bground */
+
+  color: #737373;
+}
+
+.profile {
+  position: absolute;
+  width: 16.5px;
+  height: 18.63px;
+  left: 318px;
+  top: 64.67px;
+
+  /* text color */
+
+  /* background: #232323; */
+}
+
+.appName {
+  position: absolute;
+  width: 247px;
+  height: 101px;
+  left: 59.5px;
+  top: 114.83px;
+  margin-top: 0;
+
+  font-family: PlayfairDisplay;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 76px;
+  line-height: 101px;
+
+  /* text color */
+
+  color: #232323;
+}
+
+.description {
+  position: absolute;
+  width: 254px;
+  height: 16px;
+  left: 52.5px;
+  top: 238.5px;
+
+  font-family: "Figtree Light";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  /* icon bground */
+
+  color: #737373;
+}
+
+.logo {
+}
+
+.viewMap {
+  width: 119px;
+  height: 39px;
+  margin-bottom: 21px;
+  border-radius: 50px;
+  background-color: #5e5e5e;
+  border: none;
+  padding: 0;
+  color: white;
+
+  position: absolute;
+  width: 137px;
+  height: 40px;
+  left: 112px;
+  top: 566px;
+}

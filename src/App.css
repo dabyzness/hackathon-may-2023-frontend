@@ -18,6 +18,11 @@
   src: url(./assets/fonts/Figtree-Medium.ttf);
 }
 
+@font-face {
+  font-family: PlayfairDisplay;
+  src: url(./assets/fonts/PlayfairDisplay-SemiBold.ttf);
+}
+
 .App {
   text-align: center;
 }

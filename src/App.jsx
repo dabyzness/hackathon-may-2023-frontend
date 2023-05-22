@@ -6,6 +6,8 @@ import Auth from "./pages/Auth/Auth";
 import Location from "./pages/Location/Location";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Profile from "./pages/Profile/Profile";
+import Landing from "./pages/Landing/Landing";
+import Map from "./pages/Map/Map";
 
 import { signup, login } from "./services/authService";
 import { getProfile } from "./services/profileService";
@@ -82,8 +84,6 @@ function App() {
     return data;
   }
 
-  // FOR Elliot
-
   return (
     <div className="App">
       <AndroidHeader />
@@ -95,6 +95,12 @@ function App() {
             <Auth handleSignup={handleSignup} handleLogin={handleLogin} />
           }
         />
+
+        <Route
+          path="/location"
+          element={<Map locations={locations} user={user} />}
+        />
+
         <Route
           path="/location/:locationId"
           element={<Location fetchLocation={fetchLocation} />}
@@ -109,7 +115,7 @@ function App() {
           }
         />
       </Routes>
-      <Footer profile={profile} />
+      {user && <Footer profile={profile} />}
     </div>
   );
 }

@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./AuthForms.module.css";
 import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
-
-
-const SignupForm = ({ handleSignup }) => {
+const SignupForm = ({ handleSignup, setIsLogin }) => {
   const [userFormData, setUserFormData] = useState({
     email: "",
     password: "",
@@ -21,7 +19,7 @@ const SignupForm = ({ handleSignup }) => {
 
   const navigate = useNavigate();
 
-  //a few thoughts on adding to handleChange(): 
+  //a few thoughts on adding to handleChange():
   // would be nice to set the cursor to match with the placeholder text when the field is active; also, if a user happens to move the cursor even just one position over with the spacebar and then clicks anywhere else in the window to render the field inactive, the placeholder text doesn't become visible again unless the cursor is backspaced back to position '0';
   function handleChange(evt) {
     if (evt.target.type === "select-one") {
@@ -39,10 +37,10 @@ const SignupForm = ({ handleSignup }) => {
       });
     }
   }
-  function onFocus(evt){
+  function onFocus(evt) {
     setSelectionRange(evt.target, 5, -1);
   }
-  
+
   async function handleSubmit(evt) {
     evt.preventDefault();
 
@@ -60,86 +58,84 @@ const SignupForm = ({ handleSignup }) => {
 
     navigate("/");
   }
-  
-  
 
   return (
-  <div>
-    <h3 className={styles.header}>Sign Up</h3>
-    <form onSubmit={handleSubmit}>
-      <div className={styles.fieldsContainer}>
-        <div className={styles.inputFieldContainer}>
-          <input
-            type="text"
-            placeholder="FIRST NAME"
-            name="profile-firstName"
-            value={profileFormData.firstName}
-            onChange={handleChange}
-            focus={onFocus}
-          />
-        </div>
-        
-        
-        <div className={styles.inputFieldContainer}>  
-          <input
-            type="text"
-            placeholder="LAST NAME"
-            name="profile-lastName"
-            value={profileFormData.lastName}
-            onChange={handleChange}
-          />
-        </div>
-        
-        
-        <div className={styles.inputFieldContainer}>  
-          <input
-            type="text"
-            placeholder="EMAIL ADDRESS *"
-            
-            name="user-email"
-            value={userFormData.email}
-            onChange={handleChange}
-          />
-        </div>
-        
-        
-        <div className={styles.inputFieldContainer}>    
-          <input
-            type="text"
-            placeholder="PASSWORD"
-            name="user-password"
-            value={userFormData.password}
-            onChange={handleChange}
-          />
-        </div>
-        
-        
-        <div className={styles.inputFieldContainer}> 
-          <input
-            type="text"
-            placeholder="RETYPE PASSWORD"
-            name="user-rePassword"
-            value={userFormData.rePassword}
-            onChange={handleChange}
-          />
-        </div>
-        
-        
-        <div className={styles.inputFieldContainer}>  
-          <input
-            type="text"
-            placeholder="USERNAME *"
-            name="profile-username"
-            value={profileFormData.username}
-            onChange={handleChange}
-          />
-        </div>
+    <div>
+      <h3 className={styles.header}>Sign Up</h3>
+      <div className={styles.subHeaderContainer}>
+        <p className={styles.subHeaderText}>HAVE AN ACCOUNT?</p>
+        <p
+          onClick={() => setIsLogin(true)}
+          className={styles.subHeaderText + " " + styles.asLink}
+        >
+          LOGIN
+        </p>
       </div>
-      
-      
-      
-     
-      {/* <div className={styles.fieldContainer}>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.fieldsContainer}>
+          <div className={styles.inputFieldContainer}>
+            <input
+              type="text"
+              placeholder="FIRST NAME *"
+              name="profile-firstName"
+              value={profileFormData.firstName}
+              onChange={handleChange}
+              focus={onFocus}
+            />
+          </div>
+
+          <div className={styles.inputFieldContainer}>
+            <input
+              type="text"
+              placeholder="LAST NAME"
+              name="profile-lastName"
+              value={profileFormData.lastName}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={styles.inputFieldContainer}>
+            <input
+              type="text"
+              placeholder="EMAIL ADDRESS *"
+              name="user-email"
+              value={userFormData.email}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={styles.inputFieldContainer}>
+            <input
+              type="text"
+              placeholder="PASSWORD *"
+              name="user-password"
+              value={userFormData.password}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={styles.inputFieldContainer}>
+            <input
+              type="text"
+              placeholder="RETYPE PASSWORD *"
+              name="user-rePassword"
+              value={userFormData.rePassword}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className={styles.inputFieldContainer}>
+            <input
+              type="text"
+              placeholder="USERNAME *"
+              name="profile-username"
+              value={profileFormData.username}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+
+        {/* <div className={styles.fieldContainer}>
         <div className={styles.selectMenuContainer}>
           <select
             name="profile-role"
@@ -156,11 +152,24 @@ const SignupForm = ({ handleSignup }) => {
           </select>
         </div>
       </div> */}
-      
-        <button className={styles.submitButton}type="submit">Sign Up</button>
-     
-    </form>
-  </div>
+
+        <button
+          className={styles.submitButton}
+          disabled={
+            !userFormData.email ||
+            !userFormData.password ||
+            !userFormData.rePassword ||
+            !profileFormData.firstName ||
+            !profileFormData.username
+              ? true
+              : false
+          }
+          type="submit"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
   );
 };
 
