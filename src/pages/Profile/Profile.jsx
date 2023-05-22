@@ -16,6 +16,7 @@ import venmo from "../../assets/profile/venmo.svg";
 import placeholder from "../../assets/profile/placeholder.svg";
 
 import allergy from "../../assets/medical/peanut.svg";
+import pen from "../../assets/medical/Hypoallergenic.svg";
 import diabetes from "../../assets/medical/Diabetes.svg";
 import gluten from "../../assets/medical/gluten.svg";
 import insulin from "../../assets/medical/insulin.svg";
@@ -51,7 +52,7 @@ const Profile = (props) => {
         name: "Peanut",
         image: allergy,
       },
-      { name: "Penicillin", image: allergy },
+      { name: "Penicillin", image: pen },
       { name: "Gluten", image: gluten },
       { name: "Diabetes", image: diabetes },
       { name: "Insulin", image: insulin },
@@ -141,7 +142,7 @@ const Profile = (props) => {
 
               <h3 className={styles.heading3}>PHONE</h3>
               <p className={styles.about}>
-                {profileFake.contact.phone.slice(0, 3)}){" "}
+                ({profileFake.contact.phone.slice(0, 3)}){" "}
                 {profileFake.contact.phone.slice(3, 6)}-
                 {profileFake.contact.phone.slice(6)}
               </p>
