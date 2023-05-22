@@ -72,7 +72,7 @@ const Home = (props) => {
           />
         </div>
       ) : ( */}
-      <Landing handleSignupClick={handleOnClick} />
+      <Landing handleSignupClick={handleOnClick} user={user} />
 
       {/* <button style={{ marginTop: "60px" }} onClick={handleOnClick}>
         // Click to Authenticate //{" "}

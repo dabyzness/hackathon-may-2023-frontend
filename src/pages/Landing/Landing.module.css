@@ -120,6 +120,12 @@
 }
 
 .logo {
+  position: absolute;
+  width: 371.85px;
+  height: 451.72px;
+  left: -147.42px;
+  top: 276.17px;
+  transform: scale(125%);
 }
 
 .viewMap {
